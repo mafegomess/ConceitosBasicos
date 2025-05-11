@@ -8,9 +8,12 @@ namespace Aula01._1Bim
 {
     internal class MetrosMilimetros
     {
-        public float Transformar (float ValorM)
+        public void Transformar()
         {
-            return ValorM * 1000;
+            Console.WriteLine("\nInsira o valor em Metros: ");
+            float ValorM = float.Parse(Console.ReadLine());
+            float ValorMili = ValorM * 1000;
+            Console.WriteLine($"{ValorM} metros é igual a {ValorMili} milímetros.");
         }
     }
 }

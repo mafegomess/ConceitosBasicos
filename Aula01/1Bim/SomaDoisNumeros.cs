@@ -8,9 +8,15 @@ namespace Aula01._1Bim
 {
     internal class SomaDoisNumeros
     {
-        public int Somar(int num1, int num2)
+        public void Somar()
         {
-            return num1 + num2;
+            Console.WriteLine("\nInsira o primeiro número que deseja somar: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o segundo número que deseja somar: ");
+            int num2 = int.Parse(Console.ReadLine());
+            int resultado = num1 + num2;
+            Console.WriteLine($"A soma dos números {num1} e {num2} é {resultado}");
+
         }
     }
 

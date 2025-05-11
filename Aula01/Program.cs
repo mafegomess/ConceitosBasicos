@@ -2,22 +2,43 @@
 
 using Aula01._1Bim;
 
-int num1 = 20;
-int num2 = 22;
-SomaDoisNumeros somador = new SomaDoisNumeros();
-int resultado = somador.Somar(num1, num2);
-Console.WriteLine($"A soma dos números {num1} e {num2} é {resultado}");
+SomaDoisNumeros Soma = new SomaDoisNumeros();
+MetrosMilimetros Conversor = new MetrosMilimetros();
 
-float ValorM = 10;
-MetrosMilimetros transformador = new MetrosMilimetros();
-float ValorMili = transformador.Transformar(ValorM);
-Console.WriteLine($"{ValorM} metros é igual a {ValorMili} milímetros.");
+int opcao = 0;
+bool continuar = true;
+while (continuar)
+{
+    Console.WriteLine("\n0 - Sair");
+    Console.WriteLine("1 - Somar dois numeros");
+    Console.WriteLine("2 - Converter metros para milímetros");
+    Console.WriteLine("Informe a opção desejada: ");
+    opcao = int.Parse(Console.ReadLine());
+    switch (opcao)
+    {
+        case 1:
+            Soma.Somar();
+            break;
+        case 2:
+            Conversor.Transformar();
+            break;
+        case 0:
+            continuar = false;
+            break;
+        default:
+            Console.WriteLine("opção inválida");
+            break;
+    }
+}
 
-//CalculaAumento calcular = new CalculaAumento();
-//calcular.CalcularAumento();
 
-//CalculaDesconto descontar = new CalculaDesconto();
-//descontar.CalcularDesconto();
+
+
+CalculaAumento calcular = new CalculaAumento();
+calcular.CalcularAumento();
+
+CalculaDesconto descontar = new CalculaDesconto();
+descontar.CalcularDesconto();
 
 AluguelCarro alugar = new AluguelCarro();
 alugar.AlugarCarro();
