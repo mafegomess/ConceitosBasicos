@@ -4,14 +4,37 @@ using Aula01._1Bim;
 
 SomaDoisNumeros Soma = new SomaDoisNumeros();
 MetrosMilimetros Conversor = new MetrosMilimetros();
+CalculaAumento Aumento = new CalculaAumento();
+CalculaDesconto Descontar = new CalculaDesconto();
+AluguelCarro Alugar = new AluguelCarro();
+IMC CalculoIMC = new IMC();
+//Tabuada Multiplica = new Tabuada();
+//MultiplosTresAteCem TresMultiplo = new MultiplosTresAteCem();
+//FatorialUmADez Fatorial = new FatorialUmADez();
+//ImpostoDeRenda Imposto = new ImpostoDeRenda();
+//AdivinharNumero Adivinhar = new AdivinharNumero();
+//FinanciamentoVeiculo Financiamento = new FinanciamentoVeiculo();
+//CalcularAposentadoria Aposentadoria = new CalcularAposentadoria();
 
 int opcao = 0;
 bool continuar = true;
 while (continuar)
 {
-    Console.WriteLine("\n0 - Sair");
+    Console.WriteLine("\n--- Menu de Opções ---");
+    Console.WriteLine("0 - Sair");
     Console.WriteLine("1 - Somar dois numeros");
     Console.WriteLine("2 - Converter metros para milímetros");
+    Console.WriteLine("3 - Calcular aumento de salário");
+    Console.WriteLine("4 - Calcular desconto de produto");
+    Console.WriteLine("5 - Calcular valor de alguel da carro");
+    Console.WriteLine("6 - Calcular IMC");
+    Console.WriteLine("7 - Tabuada de um número x");
+    Console.WriteLine("8 - Múltiplos de 3 entre 0 e 100");
+    Console.WriteLine("9 - Fatoriais de 1 até 10");
+    Console.WriteLine("10 - Calcular imposto de renda");
+    Console.WriteLine("11 - Adivinhar número");
+    Console.WriteLine("12 - Financiamento de veículo");
+    Console.WriteLine("13 - Cálculo de aposentadoria");
     Console.WriteLine("Informe a opção desejada: ");
     opcao = int.Parse(Console.ReadLine());
     switch (opcao)
@@ -22,26 +45,48 @@ while (continuar)
         case 2:
             Conversor.Transformar();
             break;
+        case 3:
+            Aumento.CalcularAumento();
+            break;
+        case 4:
+            Descontar.CalcularDesconto();
+            break;
+        case 5:
+            Alugar.AlugarCarro();
+            break;
+        case 6:
+            CalculoIMC.CalcularIMC();
+            break;
+        case 7:
+            //Multiplica.CalcularTabuada();
+            break;
+        case 8:
+            //TresMultiplo.TabuadaTresAteCem();
+            break;
+        case 9:
+            //Fatorial.CalcularFatorial();
+            break;
+        case 10:
+            //Imposto.CalcularIRPF();
+            break;
+        case 11:
+            //Adivinhar.AdivinharNumeroAleatorio();
+            break;
+        case 12:
+            //Financiamento.CalcularFinanciamentoVeiculo();
+            break;
+        case 13:
+            //Aposentadoria.CalculoDeAposentadoria();
+            break;
         case 0:
             continuar = false;
             break;
         default:
-            Console.WriteLine("opção inválida");
+            Console.WriteLine("Opção inválida");
             break;
     }
 }
 
-
-
-
-CalculaAumento calcular = new CalculaAumento();
-calcular.CalcularAumento();
-
-CalculaDesconto descontar = new CalculaDesconto();
-descontar.CalcularDesconto();
-
-AluguelCarro alugar = new AluguelCarro();
-alugar.AlugarCarro();
 
 /*
 Console.WriteLine("Hello, World!");

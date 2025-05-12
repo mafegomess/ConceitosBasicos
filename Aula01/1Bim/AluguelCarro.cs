@@ -18,7 +18,7 @@ namespace Aula01._1Bim
             float KMFinal = float.Parse(Console.ReadLine());
             float KMTotal = KMFinal - KMInicial;
             float ValorAluguel = (float)(DiasAlugados * 95 + KMTotal * 0.35);
-            Console.WriteLine($"O de alguel a ser pago é: {ValorAluguel}");
+            Console.WriteLine($"O valor de aluguel a ser pago é: {ValorAluguel}");
         }
     }
 }
