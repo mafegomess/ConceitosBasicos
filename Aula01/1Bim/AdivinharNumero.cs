@@ -11,12 +11,12 @@ namespace Aula01._1Bim
         public void AdivinharNumeroAleatorio()
         {
             Random random = new Random();
-            int NumAleatorio = random.Next();
+            int NumAleatorio = random.Next(0, 100);
             try
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    Console.WriteLine("Tente adivinhar um número de 0 a 100: ");
+                    Console.WriteLine($"Adivinhe um número de 0 a 100 (Chance {i+1}): ");
                     int Chute = int.Parse(Console.ReadLine());
                     if (Chute < 0 || Chute > 100)
                     {
@@ -29,9 +29,17 @@ namespace Aula01._1Bim
                     }
                     else
                     {
-                        Console.WriteLine("Você errou. Tente Novamente.");
+                        if(NumAleatorio < Chute)
+                        {
+                            Console.WriteLine("\nVocê errou. O número é menor. Tente Novamente.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nVocê errou. O número é maior. Tente Novamente.");
+                        }
                     }
                 }
+                Console.WriteLine($"O número era {NumAleatorio}");
                 Console.WriteLine("Fim da adivinhação.");
             }
             catch (FormatException e)
