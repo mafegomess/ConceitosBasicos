@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aula01._1Bim
+{
+    internal class FinanciamentoVeiculo
+    {
+        public void CalcularFinanciamentoVeiculo()
+        {
+            try
+            {
+                Console.WriteLine("Informe o valor do veículo: ");
+                float ValorVeiculo = float.Parse(Console.ReadLine());
+                if (ValorVeiculo == 0)
+                {
+                    throw new InputZeroException();
+                }
+                if (ValorVeiculo < 0)
+                {
+                    throw new InputNegativoException();
+                }
+                Console.WriteLine("Informe o total de parcelas: ");
+                int Parcelas = int.Parse(Console.ReadLine());
+                if (Parcelas == 0)
+                {
+                    throw new InputZeroException();
+                }
+                if (Parcelas < 0)
+                {
+                    throw new InputNegativoException();
+                }
+                Console.WriteLine("Informe o valor da taxa mensal (%): ");
+                float Taxa = float.Parse(Console.ReadLine());
+                if (Taxa < 0)
+                {
+                    throw new InputNegativoException();
+                }
+                float ValorTotal;
+                if (Taxa == 0)
+                {
+                    Taxa = 15; //Taxa administrativa
+                    ValorTotal = (ValorVeiculo + (ValorVeiculo * (Taxa / 100)));
+                }
+                else
+                {
+                    float ValorParcelas = ValorVeiculo / Parcelas;
+                    float ValorTaxa = ValorParcelas * (Taxa / 100);
+                    ValorTotal = (ValorParcelas + ValorTaxa) * Parcelas;
+
+                }
+                Console.WriteLine($"O valor total a ser pago pelo veículo é de: {ValorTotal}");
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Esse tipo de input não é válido.");
+            }
+            catch (InputZeroException e)
+            {
+                Console.WriteLine("O valor de input não pode ser zero.");
+            }
+            catch (InputNegativoException e)
+            {
+                Console.WriteLine("O valor de input não pode ser negativo.");
+            }
+        }
+    }
+}

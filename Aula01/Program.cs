@@ -8,13 +8,13 @@ CalculaAumento Aumento = new CalculaAumento();
 CalculaDesconto Descontar = new CalculaDesconto();
 AluguelCarro Alugar = new AluguelCarro();
 IMC CalculoIMC = new IMC();
-//Tabuada Multiplica = new Tabuada();
-//MultiplosTresAteCem TresMultiplo = new MultiplosTresAteCem();
-//FatorialUmADez Fatorial = new FatorialUmADez();
-//ImpostoDeRenda Imposto = new ImpostoDeRenda();
-//AdivinharNumero Adivinhar = new AdivinharNumero();
-//FinanciamentoVeiculo Financiamento = new FinanciamentoVeiculo();
-//CalcularAposentadoria Aposentadoria = new CalcularAposentadoria();
+Tabuada Multiplica = new Tabuada();
+MultiplosTresAteCem TresMultiplo = new MultiplosTresAteCem();
+FatorialUmADez Fatorial = new FatorialUmADez();
+ImpostoDeRenda Imposto = new ImpostoDeRenda();
+AdivinharNumero Adivinhar = new AdivinharNumero();
+FinanciamentoVeiculo Financiamento = new FinanciamentoVeiculo();
+CalcularAposentadoria Aposentadoria = new CalcularAposentadoria();
 
 int opcao = 0;
 bool continuar = true;
@@ -26,7 +26,7 @@ while (continuar)
     Console.WriteLine("2 - Converter metros para milímetros");
     Console.WriteLine("3 - Calcular aumento de salário");
     Console.WriteLine("4 - Calcular desconto de produto");
-    Console.WriteLine("5 - Calcular valor de alguel da carro");
+    Console.WriteLine("5 - Calcular valor de aluguel de carro");
     Console.WriteLine("6 - Calcular IMC");
     Console.WriteLine("7 - Tabuada de um número x");
     Console.WriteLine("8 - Múltiplos de 3 entre 0 e 100");
@@ -58,25 +58,25 @@ while (continuar)
             CalculoIMC.CalcularIMC();
             break;
         case 7:
-            //Multiplica.CalcularTabuada();
+            Multiplica.CalcularTabuada();
             break;
         case 8:
-            //TresMultiplo.TabuadaTresAteCem();
+            TresMultiplo.TabuadaTresAteCem();
             break;
         case 9:
-            //Fatorial.CalcularFatorial();
+            Fatorial.CalcularFatorial();
             break;
         case 10:
-            //Imposto.CalcularIRPF();
+            Imposto.CalcularIRPF();
             break;
         case 11:
-            //Adivinhar.AdivinharNumeroAleatorio();
+            Adivinhar.AdivinharNumeroAleatorio();
             break;
         case 12:
-            //Financiamento.CalcularFinanciamentoVeiculo();
+            Financiamento.CalcularFinanciamentoVeiculo();
             break;
         case 13:
-            //Aposentadoria.CalculoDeAposentadoria();
+            Aposentadoria.CalculoDeAposentadoria();
             break;
         case 0:
             continuar = false;
