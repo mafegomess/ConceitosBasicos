@@ -38,20 +38,22 @@ namespace Aula01._1Bim
                 {
                     throw new InputNegativoException();
                 }
-                float ValorTotal;
+                float ValorTotal = 0;
                 if (Taxa == 0)
                 {
-                    Taxa = 15; //Taxa administrativa
+                    Taxa = 3; //Taxa administrativa
                     ValorTotal = (ValorVeiculo + (ValorVeiculo * (Taxa / 100)));
+                    float ValorEntrada = (float)(ValorVeiculo * 0.6);
+                    Console.WriteLine($"Deve ser dado R${ValorEntrada} de entrada");
+                    Console.WriteLine($"O valor da parcela é: R${(ValorVeiculo - ValorEntrada)/Parcelas:F2}");
                 }
                 else
                 {
-                    float ValorParcelas = ValorVeiculo / Parcelas;
-                    float ValorTaxa = ValorParcelas * (Taxa / 100);
-                    ValorTotal = (ValorParcelas + ValorTaxa) * Parcelas;
+                    ValorTotal = (float)(ValorVeiculo * (Math.Pow((1 + Taxa / 100), Parcelas)));
+                    Console.WriteLine($"O valor da parcela é: R${ValorTotal/Parcelas}");
 
                 }
-                Console.WriteLine($"O valor total a ser pago pelo veículo é de: {ValorTotal}");
+                Console.WriteLine($"O valor total a ser pago pelo veículo é de: {ValorTotal:F2}");
             }
             catch (FormatException e)
             {
